@@ -9,16 +9,18 @@ CHANNEL = os.environ.get("CAHNNEL", "")
 async def start(client,message):
 	insert(int(message.chat.id))
 	await message.reply_text(text =f"""
-	𝘏𝘦𝘭𝘭𝘰 👋 {message.from_user.first_name }
+	𝘏eye dude {message.from_user.first_name }
 	
-➠ 𝘐'𝘮 𝘈 𝘛𝘦𝘭𝘦𝘨𝘳𝘢𝘮 𝘍𝘪𝘭𝘦 🗃️ & 𝘝𝘪𝘥𝘦𝘰 📸 𝘙𝘦𝘯𝘢𝘮𝘦 𝘉𝘰𝘵.
+🔵 I AM A FAST RENAMER BOT.
 
-➠ 𝘐 𝘊𝘢𝘯 𝘙𝘦𝘯𝘢𝘮𝘦 ✍️ 𝘈𝘯𝘺 𝘍𝘪𝘭𝘦 🗃️ & 𝘝𝘪𝘥𝘦𝘰 📸 𝘞𝘪𝘵𝘩 𝘊𝘶𝘴𝘵𝘰𝘮 𝘛𝘩𝘶𝘮𝘣𝘯𝘢𝘪𝘭 𝘚𝘶𝘱𝘱𝘰𝘳𝘵.
+🔵 I WITH CUSTOM THUMBNAIL SUPPORT.
+
+🔵 JUST SEND ME AN IMAGE TO SET THUMBNAIL.
        
-➠ 𝘔𝘢𝘪𝘯𝘵𝘢𝘪𝘯𝘦𝘥 𝘉𝘺 : @ChVivekTomar
+🔵 JOIN OUR CHANNEL : Sanaticsmovies 
 	""",reply_to_message_id = message.message_id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/+4BCzLkyATjswNTA1") ]  ]))
+	 [[ InlineKeyboardButton("FREE MOVIES" ,url="https://t.me/Sanaticsmovies) ]  ]))
 	
 
 
@@ -30,7 +32,7 @@ async def send_doc(client,message):
        	try:
        		await client.get_chat_member(update_channel, user_id)
        	except UserNotParticipant:
-       		await message.reply_text("**__You are not subscribed my channel__** ",reply_to_message_id = message.message_id, reply_markup = InlineKeyboardMarkup([ [ InlineKeyboardButton("Support 🇮🇳" ,url=f"https://t.me/{update_channel}") ]   ]))
+       		await message.reply_text("**__YOU HAVE NOT SUBSCRIBED MY CHANNEL_** ",reply_to_message_id = message.message_id, reply_markup = InlineKeyboardMarkup([ [ InlineKeyboardButton("SUPPORT US" ,url=f"https://t.me/{Sanaticsmovies}") ]   ]))
        		return
        date = message.date
        _used_date = find_one(user_id)
@@ -52,4 +54,4 @@ async def send_doc(client,message):
        	filename = file.file_name
        	filesize = humanize.naturalsize(file.file_size)
        	fileid = file.file_id
-       	await message.reply_text(f"""__What do you want me to do with this file?__\n**File Name** :- {filename}\n**File Size** :- {filesize}\n**Dc ID** :- {dcid} """,reply_to_message_id = message.message_id,reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("📝 Rename ",callback_data = "rename"),InlineKeyboardButton("Cancel✖️",callback_data = "cancel")  ]]))
+       	await message.reply_text(f"""__What do you want me to do with this file?__\n**File Name** :- {filename}\n**File Size** :- {filesize}\n**Dc ID** :- {dcid} """,reply_to_message_id = message.message_id,reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("✏ Rename ✏",callback_data = "rename"),InlineKeyboardButton("❌Cancel❌",callback_data = "cancel")  ]]))
